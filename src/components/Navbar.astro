@@ -1,22 +1,30 @@
 ---
 import { Picture } from 'astro:assets';
-import Logo from '../assets/logo.png';
+import Home from '../assets/home.png';
+import SSR from '../assets/ssr.webp';
 ---
 
 <header
-  class='fixed top-4 left-1/2 -translate-x-1/2 w-[90%] bg-white/80 rounded-full px-6 container'
+  class='fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-[--clr-neutral-1] px-6 container rounded-lg shadow-2xl -skew-x-6'
 >
-  <nav class='sm:flex gap-4 sm:gap-10 items-center pb-4 sm:pb-2'>
-    <div class=''>
+  <nav class='flex gap-4 sm:gap-10 items-center'>
+    <div class='skew-x-6'>
       <a href='/'
-        ><Picture src={Logo} alt={'Logo'} height={100} class={'mx-auto'} /></a
+        ><Picture src={Home} alt={'Logo'} height={100} class={'mx-auto '} /></a
       >
     </div>
-    <div class='flex justify-center sm:pt-4'>
+    <div class='flex justify-center pt-4 skew-x-6'>
       <a
-        class='uppercase text-[--clr-primary-1] font-extrabold text-xl'
-        href='/memorial-lobbies'>Memorial Lobbies</a
+        class='capitalize text-[--clr-secondary-1] font-extrabold text-center relative py-2'
+        href='/memorial-lobbies'
       >
+        <Picture
+          src={SSR}
+          alt={'SSR Paper'}
+          class={'absolute left-1/2 -translate-x-1/2 -top-[4.5rem]'}
+        />
+        <p>Memorial Lobbies</p>
+      </a>
     </div>
   </nav>
 </header>
