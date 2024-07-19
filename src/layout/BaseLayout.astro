@@ -1,6 +1,10 @@
 ---
 import '../globals.css';
 import Navbar from '../components/Navbar.astro';
+import Bg from '../assets/bg.webp';
+import { getImage } from 'astro:assets';
+
+const optimizedBg = await getImage({ src: Bg });
 
 const { title } = Astro.props;
 ---
@@ -13,7 +17,10 @@ const { title } = Astro.props;
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='relative'>
+  <body
+    style={`background-image:url(${optimizedBg.src})`}
+    class='relative h-screen bg-center bg-no-repeat bg-overlay'
+  >
     <Navbar />
     <slot />
   </body>

@@ -1,0 +1,12 @@
+---
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<!-- [&>*]:skew-x-6 -->
+<div class={`-skew-x-6 skew-rd ${className}`}>
+  <slot />
+</div>
