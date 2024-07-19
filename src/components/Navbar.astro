@@ -3,8 +3,10 @@ import { Picture } from 'astro:assets';
 import Logo from '../assets/logo.png';
 ---
 
-<header class='fixed top-0 left-0 w-full'>
-  <nav class='container sm:flex gap-4 sm:gap-10 items-center'>
+<header
+  class='fixed top-4 left-1/2 -translate-x-1/2 w-[90%] bg-white/80 rounded-full px-6 container'
+>
+  <nav class='sm:flex gap-4 sm:gap-10 items-center pb-4 sm:pb-2'>
     <div class=''>
       <a href='/'
         ><Picture src={Logo} alt={'Logo'} height={100} class={'mx-auto'} /></a
