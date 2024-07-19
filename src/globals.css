@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Rog';
+  src: url('/fonts/RoGSanSrfStd-Bd.otf');
+}
+
+@font-face {
+  font-family: 'Glow-sans';
+  src: url('/fonts/GlowSansSC-Normal-Medium.otf');
+}
+
+@layer base {
+  :root {
+    /* COLORS */
+    --clr-primary-1: #128afa;
+    --clr-primary-2: #2f4d71;
+    --clr-primary-3: #3e485a;
+
+    --clr-accent: #f4e648;
+
+    --clr-secondary-1: #081119;
+
+    --clr-neutral-1: #e8f1f8;
+    --clr-neutral-2: hsla(212.31, 15.12%, 33.73%, 0.7);
+
+    /* Gradient */
+    --clr-grad-1: #ffea7d;
+    --clr-grad-2: #ffc50d;
+
+    /* max width */
+    --max-w: 1440px;
+  }
+
+  * {
+    @apply font-glow-sans;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-[--max-w] mx-auto;
+  }
+
+  .bg-overlay {
+    border-image: fill 1
+      linear-gradient(
+        hsla(208.24, 51.52%, 6.47%, 0.3),
+        hsla(208.24, 51.52%, 6.47%, 0.1)
+      );
+  }
+}
