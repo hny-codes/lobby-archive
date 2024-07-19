@@ -1,0 +1,20 @@
+---
+import { Picture } from 'astro:assets';
+import Logo from '../assets/logo.png';
+---
+
+<header class='fixed top-0 left-0 w-full'>
+  <nav class='container sm:flex gap-4 sm:gap-10 items-center'>
+    <div class=''>
+      <a href='/'
+        ><Picture src={Logo} alt={'Logo'} height={100} class={'mx-auto'} /></a
+      >
+    </div>
+    <div class='flex justify-center sm:pt-4'>
+      <a
+        class='uppercase text-[--clr-primary-1] font-extrabold text-xl'
+        href='/memorial-lobbies'>Memorial Lobbies</a
+      >
+    </div>
+  </nav>
+</header>
