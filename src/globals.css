@@ -51,4 +51,8 @@
         hsla(208.24, 51.52%, 6.47%, 0.1)
       );
   }
+
+  .skew-rd {
+    @apply rounded-lg shadow-2xl;
+  }
 }
