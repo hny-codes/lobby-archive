@@ -1,13 +1,23 @@
 ---
 import BaseLayout from '../layout/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import Logo from '../assets/logo.png';
+import SkewContainer from '../components/SkewContainer.astro';
+
+const pageTitle = 'Lobby Archive';
 ---
 
-<BaseLayout>
-  <div>
-    <section>
-      <div>
-        <h1 class='text-white text-5xl'>Hello world</h1>
-      </div>
-    </section>
-  </div>
+<BaseLayout title={pageTitle}>
+  <section class='flex flex-col items-center w-full h-screen pt-24 bg-overlay'>
+    <Image
+      transition:name='logo'
+      src={Logo}
+      alt={'lobby archive'}
+      class='mb-4'
+      loading={'eager'}
+    />
+    <SkewContainer className='text-container md:text-2xl'>
+      <h1>View your student's memorial lobby!</h1>
+    </SkewContainer>
+  </section>
 </BaseLayout>
