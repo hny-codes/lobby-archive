@@ -39,6 +39,12 @@
   }
 }
 
+@layer components {
+  .text-container {
+    @apply bg-[--clr-primary-3] text-[--clr-neutral-1] w-fit py-3 px-4;
+  }
+}
+
 @layer utilities {
   .container {
     @apply max-w-[--max-w] mx-auto;
@@ -47,7 +53,7 @@
   .bg-overlay {
     border-image: fill 1
       linear-gradient(
-        hsla(208.24, 51.52%, 6.47%, 0.3),
+        hsla(208.24, 51.52%, 6.47%, 0.2),
         hsla(208.24, 51.52%, 6.47%, 0.1)
       );
   }
