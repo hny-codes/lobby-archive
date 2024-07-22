@@ -15,13 +15,13 @@ import SSR from '../assets/ssr.webp';
     </div>
     <div class='flex justify-center pt-4 skew-x-12'>
       <a
-        class='capitalize text-[--clr-secondary-1] font-extrabold text-center relative py-2'
+        class='capitalize text-[--clr-secondary-1] font-extrabold text-center relative py-2 group'
         href='/lobbies'
       >
         <Picture
           src={SSR}
           alt={'SSR Paper'}
-          class={'absolute left-1/2 -translate-x-1/2 -top-[4.5rem]'}
+          class={'absolute left-1/2 -translate-x-1/2 -top-[4.5rem] group-hover:transition-transform group-hover:pb-4 group-hover:-translate-y-2 group-hover:duration-150 transition-transform'}
         />
         <p>Memorial Lobbies</p>
       </a>
