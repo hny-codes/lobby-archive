@@ -12,6 +12,7 @@ const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'hybrid',
   integrations: [
     tailwind(),
     react(),
