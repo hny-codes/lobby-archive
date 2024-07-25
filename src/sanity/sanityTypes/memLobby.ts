@@ -37,6 +37,11 @@ export const memLobby = defineType({
       validation: (rule) => rule.required().error('A youtube link is needed!'),
     }),
     defineField({
+      name: 'video',
+      title: 'Video File',
+      type: 'file'
+    }),
+    defineField({
       name: 'relationship',
       title: 'Relationship Level Required',
       type: 'number',
