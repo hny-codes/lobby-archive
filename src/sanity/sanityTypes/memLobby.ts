@@ -29,17 +29,9 @@ export const memLobby = defineType({
       validation: (rule) => rule.required().error('An image is needed!'),
     }),
     defineField({
-      name: 'ytLink',
-      title: 'YouTube Link',
-      type: 'string',
-      description:
-        'Source: https://steamcommunity.com/workshop/filedetails/?id=2434025795',
-      validation: (rule) => rule.required().error('A youtube link is needed!'),
-    }),
-    defineField({
       name: 'video',
       title: 'Video File',
-      type: 'file'
+      type: 'file',
     }),
     defineField({
       name: 'relationship',
