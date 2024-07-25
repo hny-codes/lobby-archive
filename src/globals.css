@@ -43,6 +43,10 @@
   .text-container {
     @apply bg-[--clr-primary-3] text-[--clr-neutral-1] w-fit py-3 px-4;
   }
+
+  .btn {
+    @apply bg-[--clr-accent];
+  }
 }
 
 @layer utilities {
