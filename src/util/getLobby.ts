@@ -4,8 +4,21 @@ import { sanityClient } from 'sanity:client';
  * A GROK request that fetches all memorial lobbies
  * @returns an array of all memorial lobby objects
  */
-export const fetchLobby = async () => {
+export const fetchAllLobby = async () => {
   const data = await sanityClient.fetch(`*[_type == "memorial-lobby"]`);
+  return data;
+};
+
+/**
+ * A GROK request that fetches a certain amount of students with a given range
+ * @param from: number to start slice range
+ * @param to: number to end slice range
+ * @returns an array that consists of the amount of students from range[from, to] from the dataset
+ */
+export const fetchLobby = async (from: number, to: number) => {
+  const data = await sanityClient.fetch(
+    `*[_type == "memorial-lobby"][${from}...${to}]`
+  );
   return data;
 };
 
