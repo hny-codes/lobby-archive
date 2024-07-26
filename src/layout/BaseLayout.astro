@@ -18,7 +18,10 @@ const { title } = Astro.props;
   </head>
   <!-- style={`background-image:url(${optimizedBg.src})`} -->
   <body class='relative bg-center bg-no-repeat'>
-    <div transition:persist class='fixed overflow-hidden h-screen w-full -z-50'>
+    <div
+      transition:persist='arona'
+      class='fixed overflow-hidden h-screen w-full -z-50'
+    >
       <video
         playsinline
         autoplay
