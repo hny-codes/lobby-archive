@@ -11,7 +11,9 @@ const lobbyCheck = Astro.url.pathname.match(regex);
 <header
   class='fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-[--clr-neutral-1] px-6 container rounded-lg shadow-2xl -skew-x-12 z-50'
 >
-  <nav class='flex gap-4 sm:gap-10 items-center'>
+  <nav
+    class={`flex gap-4 sm:gap-10 items-center justify-center lg:justify-start`}
+  >
     <div class={`skew-x-12`}>
       <a href='/'
         ><Picture
@@ -19,7 +21,7 @@ const lobbyCheck = Astro.url.pathname.match(regex);
           alt={'Logo'}
           height={100}
           loading={'eager'}
-          class={`mx-auto ${lobbyCheck ? 'hidden' : ''}`}
+          class={`mx-auto ${lobbyCheck && 'hidden'}`}
         /></a
       >
       <a href='/'
@@ -29,7 +31,7 @@ const lobbyCheck = Astro.url.pathname.match(regex);
           height={100}
           loading={'eager'}
           transition:name='logo'
-          class={`mx-auto ${!lobbyCheck ? 'hidden' : ''}`}
+          class={`mx-auto ${!lobbyCheck && 'hidden'}`}
         /></a
       >
     </div>
