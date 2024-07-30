@@ -1,0 +1,114 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layout/BaseLayout.astro';
+import Search from 'astro-pagefind/components/Search';
+import SkewContainer from '../../components/SkewContainer.astro';
+import LobbyList from '../../components/lobby/LobbyList.astro';
+import { fetchAllLobby } from '../../util/getLobby';
+import type { Page } from 'astro';
+
+type Props = {
+  page: Page;
+};
+
+export type Student = {
+  _id: string;
+  image: ImageMetadata;
+  relationship: number;
+  slug: {
+    current: string;
+  };
+  studentName: string;
+  ytLink: string;
+};
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const students = await fetchAllLobby();
+  const slugs = students.map((student: Student) => {
+    return {
+      params: { slug: student.slug.current },
+      props: { ...student },
+    };
+  });
+
+  return paginate(slugs, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const pageTitle = 'Lobby Archive - Memory Lobbies';
+---
+
+<BaseLayout title={pageTitle}>
+  <span class='bg-overlay w-full h-screen fixed -z-50'></span>
+  <div
+    id='search-screen'
+    class={`w-full h-screen fixed z-50 bg-black/60 overflow-y-scroll hidden`}
+  >
+    <div class='w-2/3 lg:w-1/2 mx-auto mt-20 pb-10'>
+      <SkewContainer className='btn w-fit mx-auto mb-4'>
+        <button id='search-btn-close' class='px-6 py-3'>❌Close</button>
+      </SkewContainer>
+      <Search id='search' className='pagefind-ui rounded-2xl' />
+    </div>
+  </div>
+  <section class='2xl:flex pb-0'>
+    <div
+      class='container flex flex-col xl:grid xl:grid-cols-[1fr_3fr] gap-4 2xl:justify-center h-full'
+    >
+      <div class='mb-0'>
+        <div class='flex flex-col gap-4 items-center'>
+          <SkewContainer className='text-container my-6'>
+            <h1 class='text-3xl'>Memorial Lobbies</h1>
+          </SkewContainer>
+          <div class='flex gap-4 justify-center'>
+            <SkewContainer
+              className={`btn shadow-2xl flex items-center ${!page.url.prev && 'pointer-events-none brightness-50'}`}
+            >
+              <a
+                href={`${page.url.prev}`}
+                class={`h-full w-full font-bold sm:text-xl px-5 py-4 `}>←</a
+              >
+            </SkewContainer>
+            <SkewContainer
+              className={`btn shadow-2xl flex items-center ${!page.url.next && 'pointer-events-none brightness-50'}`}
+            >
+              <a
+                href={`${page.url.next}`}
+                class={`h-full w-full font-bold sm:text-xl px-5 py-4`}>→</a
+              >
+            </SkewContainer>
+          </div>
+          <SkewContainer className='btn'>
+            <button id='search-btn-open' class='px-6 py-3'>🔎Search</button>
+          </SkewContainer>
+        </div>
+      </div>
+      <div class='2xl:pt-0 flex flex-col items-center xl:items-start px-8'>
+        <!-- <LobbyContainer client:load /> -->
+        <LobbyList data={page.data} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const searchScreen = document.getElementById('search-screen');
+    const searchBtnOpen = document.getElementById('search-btn-open');
+    const searchBtnClose = document.getElementById('search-btn-close');
+
+    // Event handlers for buttons
+    searchBtnOpen.addEventListener('click', () => {
+      searchScreen.classList.remove('hidden');
+    });
+
+    searchBtnClose.addEventListener('click', () => {
+      searchScreen.classList.add('hidden');
+    });
+
+    // Event handler for screen click
+    searchScreen.addEventListener('click', (e) => {
+      if (e.target.id === 'search-screen') searchScreen.classList.add('hidden');
+    });
+  });
+</script>
