@@ -17,6 +17,10 @@ type StudentData = {
   props: Student;
 };
 
+type Props = {
+  data: StudentData[];
+};
+
 const { data } = Astro.props;
 ---
 
@@ -26,7 +30,7 @@ const { data } = Astro.props;
 >
   {
     data.map((student: StudentData) => (
-      <li class='bg-[--clr-primary-3] h-[270px] w-[300px] flex flex-col justify-center items-center -skew-x-6 [&>*]:flex-1 rounded-xl'>
+      <li class='bg-[--clr-primary-3] h-[270px] w-[300px] flex flex-col justify-center items-center -skew-x-6 [&>*]:flex-1 rounded-xl '>
         <a
           class='p-4 relative group'
           href={`/lobbies/${student.props.slug.current}`}
