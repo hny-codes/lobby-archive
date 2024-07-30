@@ -47,6 +47,18 @@
   .btn {
     @apply bg-[--clr-accent];
   }
+
+  /* Pagefind component styling */
+  .pagefind-ui {
+    @apply bg-[--clr-neutral-1] rounded-2xl;
+  }
+
+  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+    @apply bg-white px-10;
+  }
+  .pagefind-ui .pagefind-ui__result-link {
+    color: orangered;
+  }
 }
 
 @layer utilities {
