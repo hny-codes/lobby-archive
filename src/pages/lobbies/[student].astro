@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layout/BaseLayout.astro';
+import { fetchVideo, fetchAllLobby } from '../../util/getLobby';
+import { urlForImage } from '../../sanity/urlBuilder';
+import SkewContainer from '../../components/SkewContainer.astro';
+import type { Student } from './[...page].astro';
+import Video from '../../components/lobby/Video';
+
+type MemorialLobby = {
+  video: string;
+};
+
+// Generate paths for individual routes
+export async function getStaticPaths() {
+  const students = await fetchAllLobby();
+
+  return students.map((student: Student) => {
+    return {
+      params: { student: student.slug.current },
+      props: { ...student },
+    };
+  });
+}
+
+// Astro parameters and data
+const { student } = Astro.params;
+const { studentName, image } = Astro.props;
+
+// Create data variables
+const { video }: MemorialLobby = await fetchVideo(student);
+
+// Image dimensions
+const [width, height] = urlForImage(image)
+  .url()
+  .split('-')[1]
+  .split('.')[0]
+  .split('x');
+
+const pageTitle = `Lobby Archive - ${studentName}`;
+---
+
+<BaseLayout title={pageTitle}>
+  <span class='bg-overlay w-full h-screen fixed -z-50'></span>
+  <section class='pt-10'>
+    <div
+      class='max-w-[--max-w] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 px-8 relative'
+    >
+      <SkewContainer
+        className='text-container text-3xl justify-self-center h-fit'
+      >
+        <h1 class='text-4xl'>{studentName}</h1>
+      </SkewContainer>
+      <div
+        transition:name={`${studentName}`}
+        class={`mb-32 lg:mb-56 aspect-video `}
+      >
+        <Video
+          name={student}
+          imageSrc={urlForImage(image).url()}
+          alt={studentName}
+          width={Number(width)}
+          height={Number(height)}
+          client:load
+        />
+        <div class='flex gap-4 items-center'>
+          <SkewContainer className='btn mt-4 py-4 w-fit shadow-2xl'>
+            <a
+              href={`${video}?dl=`}
+              class='h-full w-full p-4 font-bold sm:text-xl'>Download</a
+            >
+          </SkewContainer>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
