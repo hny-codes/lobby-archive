@@ -3,7 +3,6 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import sanity from '@sanity/astro';
 import { loadEnv } from 'vite';
-import vercel from '@astrojs/vercel/serverless';
 const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
   process.env.NODE_ENV,
   process.cwd(),
@@ -12,7 +11,6 @@ const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
   integrations: [
     tailwind(),
     react(),
@@ -24,5 +22,4 @@ export default defineConfig({
       studioBasePath: '/admin', // If you want to access the Studio on a route
     }),
   ],
-  adapter: vercel(),
 });
