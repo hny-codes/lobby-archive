@@ -9,6 +9,15 @@ export default {
         rog: ['Rog', ...defaultTheme.fontFamily.sans],
         'glow-sans': ['Glow-sans', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        lobbyEnter: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
+      animation: {
+        lobby: 'lobbyEnter 300ms ease-in forwards 300ms',
+      },
     },
   },
   plugins: [],
