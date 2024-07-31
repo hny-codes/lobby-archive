@@ -98,17 +98,21 @@ const pageTitle = 'Lobby Archive - Memory Lobbies';
     const searchBtnClose = document.getElementById('search-btn-close');
 
     // Event handlers for buttons
-    searchBtnOpen.addEventListener('click', () => {
-      searchScreen.classList.remove('hidden');
-    });
+    searchBtnOpen &&
+      searchBtnOpen.addEventListener('click', () => {
+        searchScreen.classList.remove('hidden');
+      });
 
-    searchBtnClose.addEventListener('click', () => {
-      searchScreen.classList.add('hidden');
-    });
+    searchBtnClose &&
+      searchBtnClose.addEventListener('click', () => {
+        searchScreen.classList.add('hidden');
+      });
 
     // Event handler for screen click
-    searchScreen.addEventListener('click', (e) => {
-      if (e.target.id === 'search-screen') searchScreen.classList.add('hidden');
-    });
+    searchScreen &&
+      searchScreen.addEventListener('click', (e) => {
+        if (e.target.id === 'search-screen')
+          searchScreen.classList.add('hidden');
+      });
   });
 </script>
