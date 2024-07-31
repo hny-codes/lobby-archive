@@ -109,10 +109,15 @@ const pageTitle = 'Lobby Archive - Memory Lobbies';
       });
 
     // Event handler for screen click
-    searchScreen &&
+    if (searchScreen) {
       searchScreen.addEventListener('click', (e) => {
         if (e.target.id === 'search-screen')
           searchScreen.classList.add('hidden');
       });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') searchScreen.classList.add('hidden');
+      });
+    }
   });
 </script>
