@@ -39,11 +39,11 @@ export default function Video({
     getVideo();
   }, []);
 
-  // once video loading state is true, video loading state waits until video data has loaded (readystate i 4)
+  // once video loading state is true, video loading state waits until video data has loaded (readystate >= 3)
   // once loaded, changes loading state of image to true, thus removing it
   useEffect(() => {
     const videoData = (vid: HTMLVideoElement) => {
-      if (vid.readyState === 4) setLoading(false);
+      if (vid.readyState >= 3) setLoading(false);
     };
 
     if (videoRef.current) {
