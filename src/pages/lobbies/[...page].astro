@@ -96,11 +96,13 @@ const pageTitle = 'Lobby Archive - Memory Lobbies';
     const searchScreen = document.getElementById('search-screen');
     const searchBtnOpen = document.getElementById('search-btn-open');
     const searchBtnClose = document.getElementById('search-btn-close');
+    const search = document.querySelector('.pagefind-ui__search-input');
 
     // Event handlers for buttons
     searchBtnOpen &&
       searchBtnOpen.addEventListener('click', () => {
         searchScreen.classList.remove('hidden');
+        search.focus();
       });
 
     searchBtnClose &&
