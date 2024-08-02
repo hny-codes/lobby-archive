@@ -80,6 +80,7 @@ export default function Video({
             muted
             loop
             disablePictureInPicture
+            controls
             className='aspect-video hidden lg:block'
             id='video'
           >
