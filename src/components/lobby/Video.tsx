@@ -72,18 +72,29 @@ export default function Video({
       />
       {/* Load video when videoURL is fetched */}
       {video && (
-        <video
-          ref={videoRef}
-          playsInline
-          autoPlay
-          muted
-          loop
-          disablePictureInPicture
-          className='aspect-video'
-          id='video'
-        >
-          <source src={video} type='video/mp4' />
-        </video>
+        <>
+          <video
+            ref={videoRef}
+            playsInline
+            autoPlay
+            muted
+            loop
+            disablePictureInPicture
+            className='aspect-video hidden lg:block'
+            id='video'
+          >
+            <source src={video} type='video/mp4' />
+          </video>
+          <video
+            ref={videoRef}
+            muted
+            controls
+            className='aspect-video lg:hidden'
+            id='video'
+          >
+            <source src={video} type='video/mp4' />
+          </video>
+        </>
       )}
     </div>
   );
