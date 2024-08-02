@@ -68,7 +68,7 @@ export default function Video({
         loading='lazy'
         width={width}
         height={height}
-        className={`w-full h-full object-cover transition-all blur absolute ${!loading && 'opacity-0 transition-all duration-1000'}`}
+        className={`w-full h-full object-cover transition-all blur absolute z-50 ${!loading && video && 'invisible opacity-0 transition-all duration-1000'}`}
       />
       {/* Load video when videoURL is fetched */}
       {video && (
