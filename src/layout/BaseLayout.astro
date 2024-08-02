@@ -1,8 +1,9 @@
 ---
 import '../globals.css';
 import Navbar from '../components/Navbar.astro';
-import BgVideoMp4 from '../assets/bg/arona.mp4';
 import { ViewTransitions } from 'astro:transitions';
+import AronaRoom from '../assets/bg/AronaRoom.webp';
+import { Image } from 'astro:assets';
 
 const { title } = Astro.props;
 ---
@@ -16,7 +17,6 @@ const { title } = Astro.props;
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <!-- style={`background-image:url(${optimizedBg.src})`} -->
   <body class='relative bg-center bg-no-repeat'>
     <div
       transition:persist='arona'
@@ -29,8 +29,9 @@ const { title } = Astro.props;
         loop
         disablepictureinpicture
         class='absolute top-0 left-0 h-full w-full object-cover object-[20%] xl:object-center'
+        src='https://res.cloudinary.com/dqbuiemre/video/upload/v1722562924/arona_ce80pm.mp4'
       >
-        <source src={BgVideoMp4} type='video/mp4' />
+        <Image src={AronaRoom} alt={'Arona Room'} />
       </video>
     </div>
     <Navbar />
