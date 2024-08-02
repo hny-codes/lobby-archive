@@ -61,15 +61,26 @@ export default function Video({
   return (
     <div className='aspect-video relative'>
       {/* Loading image */}
-      <img
-        src={imageSrc}
-        alt={alt}
-        decoding='async'
-        loading='lazy'
-        width={width}
-        height={height}
-        className={`w-full h-full object-cover transition-all blur absolute z-50 ${!loading && video && 'invisible opacity-0 transition-all duration-1000'}`}
-      />
+      <>
+        <img
+          src={imageSrc}
+          alt={alt}
+          decoding='async'
+          loading='lazy'
+          width={width}
+          height={height}
+          className={`hidden lg:block w-full h-full object-cover transition-all blur absolute z-50 ${!loading && video && 'invisible opacity-0 transition-all duration-1000'}`}
+        />
+        <img
+          src={imageSrc}
+          alt={alt}
+          decoding='async'
+          loading='lazy'
+          width={width}
+          height={height}
+          className={`lg:hidden w-full h-full object-cover transition-all blur absolute z-50 ${video && 'invisible opacity-0 transition-all duration-1000'}`}
+        />
+      </>
       {/* Load video when videoURL is fetched */}
       {video && (
         <>
@@ -81,7 +92,7 @@ export default function Video({
             loop
             disablePictureInPicture
             controls
-            className='aspect-video hidden lg:block'
+            className='aspect-video hidden lg:block w-full'
             id='video'
           >
             <source src={video} type='video/mp4' />
@@ -90,7 +101,7 @@ export default function Video({
             ref={videoRef}
             muted
             controls
-            className='aspect-video lg:hidden'
+            className='aspect-video lg:hidden w-full'
             id='video'
           >
             <source src={video} type='video/mp4' />
