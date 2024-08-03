@@ -4,8 +4,8 @@ import Home from '../assets/home.png';
 import SSR from '../assets/ssr.webp';
 import Logo from '../assets/logo.png';
 
-const regex = /\/lobbies+$|\/lobbies\/[0-9]/;
-const lobbyCheck = Astro.url.pathname.match(regex);
+const regex = /\/lobbies\/+$|\/lobbies\/[0-9]/;
+const lobbyCheck = regex.test(Astro.url.pathname);
 ---
 
 <header
@@ -36,7 +36,7 @@ const lobbyCheck = Astro.url.pathname.match(regex);
       >
     </div>
     <div
-      class={`flex justify-center pt-4 skew-x-12 ${lobbyCheck ? 'hidden' : ''}`}
+      class={`flex justify-center pt-4 skew-x-12 ${lobbyCheck ? 'hidden' : 'block'}`}
     >
       <a
         class='capitalize text-[--clr-secondary-1] font-extrabold text-center relative py-2 group'
