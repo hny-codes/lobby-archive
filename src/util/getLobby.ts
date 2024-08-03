@@ -5,7 +5,9 @@ import { sanityClient } from 'sanity:client';
  * @returns an array of all memorial lobby objects
  */
 export const fetchAllLobby = async () => {
-  const data = await sanityClient.fetch(`*[_type == "memorial-lobby"]`);
+  const data = await sanityClient.fetch(
+    `*[_type == "memorial-lobby"] | order(date desc)`
+  );
   return data;
 };
 
