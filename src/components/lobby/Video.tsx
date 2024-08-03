@@ -62,7 +62,7 @@ export default function Video({
     <div className='aspect-video relative'>
       {/* Loading image */}
       <>
-        <img
+        {/* <img
           src={imageSrc}
           alt={alt}
           decoding='async'
@@ -70,7 +70,7 @@ export default function Video({
           width={width}
           height={height}
           className={`hidden lg:block w-full h-full object-cover transition-all blur absolute z-50 ${!loading && video && 'invisible opacity-0 transition-all duration-1000'}`}
-        />
+        /> */}
         <img
           src={imageSrc}
           alt={alt}
@@ -78,7 +78,7 @@ export default function Video({
           loading='lazy'
           width={width}
           height={height}
-          className={`lg:hidden w-full h-full object-cover transition-all blur absolute z-50 ${video && 'invisible opacity-0 transition-all duration-1000'}`}
+          className={`w-full h-full object-cover transition-all blur absolute z-50 ${video && 'invisible opacity-0 transition-all duration-1000'}`}
         />
       </>
       {/* Load video when videoURL is fetched */}
