@@ -30,7 +30,7 @@ const { data } = Astro.props;
   class='text-[--clr-neutral-1] px-2 py-4 w-full h-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center pb-32 lg:[&>li:nth-child(-n+3)]:translate-x-[1.7rem] lg:[&>li:nth-child(n+7)]:-translate-x-[1.7rem]'
 >
   {
-    data.map((student: StudentData, idx: number) => (
+    data.map((student: StudentData) => (
       <li class='bg-[--clr-primary-3] h-[260px] w-[300px] flex flex-col justify-center items-center -skew-x-6 [&>*]:flex-1 rounded-xl '>
         <a
           class='p-4 relative group'
