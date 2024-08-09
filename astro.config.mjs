@@ -4,15 +4,16 @@ import react from '@astrojs/react';
 import sanity from '@sanity/astro';
 import { loadEnv } from 'vite';
 import pagefind from 'astro-pagefind';
+import sitemap from "@astrojs/sitemap";
+const {
+  PUBLIC_SANITY_PROJECT_ID,
+  PUBLIC_SANITY_DATASET
+} = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
-const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
-  process.env.NODE_ENV,
-  process.cwd(),
-  ''
-);
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lobby-archive.vercel.app/',
   integrations: [
     tailwind(),
     react(),
@@ -24,5 +25,6 @@ export default defineConfig({
       apiVersion: '2024-07-17',
       studioBasePath: '/admin', // If you want to access the Studio on a route
     }),
+    sitemap(),
   ],
 });
