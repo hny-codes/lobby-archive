@@ -6,7 +6,13 @@ import AronaRoom from '../assets/bg/AronaRoom.webp';
 import { Image } from 'astro:assets';
 import { SEO } from 'astro-seo';
 
-const { title } = Astro.props;
+type Props = {
+  title: string;
+  studentName: string;
+  studentImage: string;
+};
+
+const { title, studentName, studentImage } = Astro.props;
 ---
 
 <html lang='en'>
@@ -20,13 +26,12 @@ const { title } = Astro.props;
     <SEO
       title={title}
       titleDefault='Lobby Archive - Memorial Lobby Collection'
-      description={`View your favorite Blue Archive student's memorial lobby as-is within the browser or download as a video file.`}
+      description={`View ${studentName}'s-specific animated memorial lobby as-is within the browser or download as a video file.`}
       openGraph={{
         basic: {
-          title: `${title}`,
-          type: 'website',
-          image:
-            'https://res.cloudinary.com/dqbuiemre/image/upload/fl_preserve_transparency/v1723253881/arona2_par3lm.jpg?_s=public-apps',
+          title: `Lobby Archive - ${studentName}'s Memorial Lobby`,
+          type: 'video',
+          image: studentImage,
         },
       }}
     />
