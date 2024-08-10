@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { urlForImage } from '../../sanity/urlBuilder';
+import AffectionIcon from '../../assets/affection.webp';
 
 export type Student = {
   _id: string;
@@ -48,6 +49,14 @@ const { data } = Astro.props;
           <p class='absolute bottom-4 text-2xl opacity-0 group-hover:opacity-100 transition-all group-hover:transition-all text-[--clr-neutral-1]'>
             {student.props.studentName}
           </p>
+          <div class='absolute top-6 left-6 '>
+            <div class='relative'>
+              <Image src={AffectionIcon} alt={''} />
+              <small class='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[--clr-secondary-1] text-xl '>
+                {student.props.relationship}
+              </small>
+            </div>
+          </div>
         </a>
       </li>
     ))
