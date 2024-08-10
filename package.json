@@ -25,6 +25,7 @@
     "astro": "^4.11.6",
     "astro-embed": "^0.7.2",
     "astro-pagefind": "^1.6.0",
+    "astro-seo": "^0.8.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sanity": "^3.51.0",
