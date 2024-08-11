@@ -51,7 +51,7 @@ const { data } = Astro.props;
           </p>
           <div class='absolute top-6 left-6 ' transition:animate='none'>
             <div class='relative'>
-              <Image src={AffectionIcon} alt={''} />
+              <Image src={AffectionIcon} alt={''} loading={'eager'} />
               <small class='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[--clr-secondary-1] text-xl '>
                 {student.props.relationship}
               </small>
