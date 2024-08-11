@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { urlForImage } from '../../sanity/urlBuilder';
+import AffectionIcon from '../../assets/affection.webp';
 
 export type Student = {
   _id: string;
@@ -31,9 +32,9 @@ const { data } = Astro.props;
 >
   {
     data.map((student: StudentData) => (
-      <li class='bg-[--clr-primary-3] h-[260px] w-[300px] flex flex-col justify-center items-center -skew-x-6 [&>*]:flex-1 rounded-xl '>
+      <li class='bg-[--clr-primary-3] h-[260px] w-[300px] inline-flex flex-col justify-center items-center -skew-x-6 [&>*]:flex-1 rounded-xl'>
         <a
-          class='p-4 relative group'
+          class='p-4 relative group h-full w-full'
           href={`/lobbies/${student.props.slug.current}`}
         >
           <Image
@@ -42,12 +43,20 @@ const { data } = Astro.props;
             width={300}
             height={300}
             loading={'eager'}
-            class={`object-cover h-full rounded-xl group-hover:brightness-50 group-hover:transition  opacity-0 animate-lobby`}
+            class={`object-cover h-full rounded-xl group-hover:brightness-50 group-hover:transition w-max opacity-0 animate-lobby`}
             transition:name={`${student.props.studentName}`}
           />
           <p class='absolute bottom-4 text-2xl opacity-0 group-hover:opacity-100 transition-all group-hover:transition-all text-[--clr-neutral-1]'>
             {student.props.studentName}
           </p>
+          <div class='absolute top-6 left-6 ' transition:animate='none'>
+            <div class='relative'>
+              <Image src={AffectionIcon} alt={''} loading={'eager'} />
+              <small class='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[--clr-secondary-1] text-xl '>
+                {student.props.relationship}
+              </small>
+            </div>
+          </div>
         </a>
       </li>
     ))

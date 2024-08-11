@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.8.2",
     "@astrojs/react": "^3.6.0",
+    "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.7.2",
     "@sanity/astro": "^3.1.4",
@@ -24,6 +25,7 @@
     "astro": "^4.11.6",
     "astro-embed": "^0.7.2",
     "astro-pagefind": "^1.6.0",
+    "astro-seo": "^0.8.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sanity": "^3.51.0",

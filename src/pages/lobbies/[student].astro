@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layout/BaseLayout.astro';
+import StudentLayout from '../../layout/StudentLayout.astro';
 import { fetchVideo, fetchAllLobby } from '../../util/getLobby';
 import { urlForImage } from '../../sanity/urlBuilder';
 import SkewContainer from '../../components/SkewContainer.astro';
@@ -39,16 +39,20 @@ const [width, height] = urlForImage(image)
 const pageTitle = `Lobby Archive - ${studentName}`;
 ---
 
-<BaseLayout title={pageTitle}>
+<StudentLayout
+  title={pageTitle}
+  studentName={studentName}
+  studentImage={urlForImage(image).url()}
+>
   <span class='bg-overlay w-full h-screen fixed -z-50'></span>
   <section class='pt-10'>
     <div
-      class='max-w-[--max-w] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 px-8 relative'
+      class='max-w-[--max-w] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] xl:grid-cols-[1fr_2fr] gap-8 px-8 relative'
     >
       <SkewContainer
-        className='text-container text-3xl justify-self-center h-fit'
+        className='text-container text-3xl justify-self-center h-fit w-full'
       >
-        <h1 class='text-4xl'>{studentName}</h1>
+        <h1 class='text-4xl text-center'>{studentName}</h1>
       </SkewContainer>
       <div
         transition:name={`${studentName}`}
@@ -73,4 +77,4 @@ const pageTitle = `Lobby Archive - ${studentName}`;
       </div>
     </div>
   </section>
-</BaseLayout>
+</StudentLayout>

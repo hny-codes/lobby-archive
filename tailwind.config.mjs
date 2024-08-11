@@ -16,7 +16,7 @@ export default {
         },
       },
       animation: {
-        lobby: 'lobbyEnter 300ms ease-in forwards 300ms',
+        lobby: 'lobbyEnter 400ms ease-in forwards 150ms',
       },
     },
   },
