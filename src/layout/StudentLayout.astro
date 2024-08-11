@@ -38,6 +38,12 @@ const { title, studentName, studentImage } = Astro.props;
           description: `View ${studentName}'s-specific animated memorial lobby as-is within the browser or download as a video file. Select or search for your favorite student.`,
         },
       }}
+      twitter={{
+        card: 'summary_large_image',
+        image: studentImage,
+        imageAlt: studentName,
+        description: `View ${studentName}'s-specific animated memorial lobby as-is within the browser or download as a video file. Select or search for your favorite student.`,
+      }}
     />
   </head>
   <body class='relative bg-center bg-no-repeat'>
