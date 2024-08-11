@@ -26,12 +26,16 @@ const { title, studentName, studentImage } = Astro.props;
     <SEO
       title={title}
       titleDefault='Lobby Archive - Memorial Lobby Collection'
-      description={`View ${studentName}'s-specific animated memorial lobby as-is within the browser or download as a video file.`}
+      description={`View ${studentName}'s-specific animated memorial lobby as-is within the browser or download as a video file. Select or search for your favorite student.`}
       openGraph={{
         basic: {
           title: `Lobby Archive - ${studentName}'s Memorial Lobby`,
           type: 'video',
           image: studentImage,
+        },
+        optional: {
+          siteName: `Lobby Archive - ${studentName}'s Memorial Lobby`,
+          description: `View ${studentName}'s-specific animated memorial lobby as-is within the browser or download as a video file. Select or search for your favorite student.`,
         },
       }}
     />
