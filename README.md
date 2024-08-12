@@ -73,6 +73,7 @@ Besides the resources used to create the data for this website, here are other r
 - [MDN Documentation](https://developer.mozilla.org/en-US/)
 - [MDN Video State](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/readyState)
 - [GROQ Cheat-sheet](https://www.sanity.io/docs/query-cheat-sheet)
+- [Astro SEO integration](https://github.com/jonasmerlin/astro-seo#readme)
 
 <div align='center' style="margin-top:2rem;">
   <b style="font-size:2rem;">Thanks for viewing, Sensei!</b>
