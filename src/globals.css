@@ -48,6 +48,10 @@
     @apply bg-[--clr-accent];
   }
 
+  .link {
+    @apply underline hover:text-[--clr-accent] w-fit;
+  }
+
   /* Pagefind component styling */
   .pagefind-ui {
     @apply bg-[--clr-neutral-1] rounded-2xl;
