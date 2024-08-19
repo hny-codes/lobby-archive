@@ -28,7 +28,7 @@ const { data } = Astro.props;
 <!-- first 3: :nth-child(-n+3) --><!-- next 3: :nth-child(-1n+6) --><!-- last 3: :nth-child(n+7) -->
 <ul
   id='list'
-  class='text-[--clr-neutral-1] px-2 py-4 w-full h-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center pb-32 lg:[&>li:nth-child(-n+3)]:translate-x-[1.7rem] lg:[&>li:nth-child(n+7)]:-translate-x-[1.7rem]'
+  class='text-[--clr-neutral-1] px-2 py-4 w-full h-full grid sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center xl:pb-32 lg:[&>li:nth-child(-n+3)]:translate-x-[1.7rem] lg:[&>li:nth-child(n+7)]:-translate-x-[1.7rem]'
 >
   {
     data.map((student: StudentData) => (
