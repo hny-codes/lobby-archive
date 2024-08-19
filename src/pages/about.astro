@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layout/BaseLayout.astro';
+import Logo from '../assets/logo.png';
+import { Image } from 'astro:assets';
+import GithubIcon from '../components/icons/GithubIcon.astro';
+import AstroIcon from '../components/icons/AstroIcon.astro';
+import TailwindIcon from '../components/icons/TailwindIcon.astro';
+import SanityIcon from '../components/icons/SanityIcon.astro';
+
+const pageTitle = 'Lobby Archive - About';
+---
+
+<BaseLayout title={pageTitle}>
+  <span class='bg-overlay w-full h-screen fixed -z-50'></span>
+  <section class='flex flex-col w-full items-center h-screen pt-10 px-4'>
+    <div
+      class='bg-[#e8f1f8]/90 max-w-[60ch] pt-4 pb-16 px-4 md:px-10 skew-rd md:-skew-x-6 md:[&>*]:skew-x-6 space-y-6'
+    >
+      <Image
+        transition:name='logo'
+        src={Logo}
+        alt={'lobby archive'}
+        class=''
+        loading={'eager'}
+      />
+      <p>
+        Lobby Archive is a fan-made website that stores a collection of all Blue
+        Archive Student's Memorial Lobbies. Select or search for your favorite
+        student and view their memorial lobby as-in within the browser as a
+        video or download it.
+      </p>
+      <p class='md:pl-4'>
+        All assets, game content, and materials are trademarks and copyrights of
+        Nexon Games. This website is not affiliated with Nexon games and is
+        simply a fan-made project created by a fan that also plays the game.
+        <br /><br />Memorial Lobby (Live2D) collection by
+        <a
+          href='https://steamcommunity.com/workshop/filedetails/?id=2434025795'
+          target='_blank'
+          class='underline hover:text-[--clr-accent]'>Jaymie</a
+        >.
+      </p>
+      <div class='md:pl-6 flex items-center gap-4 pt-4'>
+        <a
+          href='https://github.com/hny-codes/lobby-archive'
+          target='_blank'
+          class='flex items-center link gap-1'><GithubIcon /> Github</a
+        > |
+        <p>Built with:</p>
+        <a
+          href='https://astro.build/'
+          target='_blank'
+          class='link'
+          aria-label='astro'><AstroIcon /></a
+        >
+        <a
+          href='https://tailwindcss.com/'
+          target='_blank'
+          class='link'
+          aria-label='tailwind'><TailwindIcon /></a
+        >
+        <a
+          href='https://www.sanity.io/'
+          target='_blank'
+          class='link'
+          aria-label='sanity'><SanityIcon /></a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
