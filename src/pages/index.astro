@@ -3,6 +3,7 @@ import BaseLayout from '../layout/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import Logo from '../assets/logo.png';
 import SkewContainer from '../components/SkewContainer.astro';
+import InfoIcon from '../components/icons/InfoIcon.astro';
 
 const pageTitle = 'Lobby Archive';
 ---
@@ -17,8 +18,9 @@ const pageTitle = 'Lobby Archive';
       class='mb-4'
       loading={'eager'}
     />
-    <SkewContainer className='text-container md:text-2xl'>
-      <h1>View your student's memorial lobby!</h1>
+    <SkewContainer className='text-container md:text-2xl max-w-[300px] sm:max-w-[400px] text-center'>
+      <h1>A collection of Blue Archive Memorial Lobbies</h1>
     </SkewContainer>
+    <a href='/about' class='mt-4 text-2xl' aria-label='about'><InfoIcon /></a>
   </section>
 </BaseLayout>

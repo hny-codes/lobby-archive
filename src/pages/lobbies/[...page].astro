@@ -86,6 +86,24 @@ const pageTitle = 'Lobby Archive - Memorial Lobby Collection';
       <div class='2xl:pt-0 flex flex-col items-center xl:items-start px-8'>
         <LobbyList data={page.data} />
       </div>
+      <div class='flex gap-4 justify-center xl:hidden pb-44'>
+        <SkewContainer
+          className={`btn shadow-2xl flex items-center ${!page.url.prev && 'pointer-events-none brightness-50'}`}
+        >
+          <a
+            href={`${page.url.prev}`}
+            class={`h-full w-full font-bold sm:text-xl px-5 py-4 `}>←</a
+          >
+        </SkewContainer>
+        <SkewContainer
+          className={`btn shadow-2xl flex items-center ${!page.url.next && 'pointer-events-none brightness-50'}`}
+        >
+          <a
+            href={`${page.url.next}`}
+            class={`h-full w-full font-bold sm:text-xl px-5 py-4`}>→</a
+          >
+        </SkewContainer>
+      </div>
     </div>
   </section>
 </BaseLayout>
