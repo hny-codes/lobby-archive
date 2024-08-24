@@ -4,12 +4,13 @@ import react from '@astrojs/react';
 import sanity from '@sanity/astro';
 import { loadEnv } from 'vite';
 import pagefind from 'astro-pagefind';
-import sitemap from "@astrojs/sitemap";
-const {
-  PUBLIC_SANITY_PROJECT_ID,
-  PUBLIC_SANITY_DATASET
-} = loadEnv(process.env.NODE_ENV, process.cwd(), '');
-
+import sitemap from '@astrojs/sitemap';
+const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
+  process.env.NODE_ENV,
+  process.cwd(),
+  ''
+);
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,4 +28,8 @@ export default defineConfig({
     }),
     sitemap(),
   ],
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
+  output: 'hybrid',
 });
