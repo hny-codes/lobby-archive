@@ -66,7 +66,15 @@ const pageTitle = `Lobby Archive - ${studentName}`;
           height={Number(height)}
           client:load
         />
-        <div class='flex gap-4 items-center'>
+        <div class='flex gap-4 items-center justify-center lg:justify-start'>
+          <SkewContainer className='btn mt-4 w-fit shadow-2xl cursor-pointer'>
+            <div
+              id='back'
+              class='w-full py-4 px-10 font-bold sm:text-xl inline-block'
+            >
+              Back
+            </div>
+          </SkewContainer>
           <SkewContainer className='btn mt-4 py-4 w-fit shadow-2xl'>
             <a
               href={`${video}?dl=`}
@@ -78,3 +86,11 @@ const pageTitle = `Lobby Archive - ${studentName}`;
     </div>
   </section>
 </StudentLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.getElementById('back')?.addEventListener('click', () => {
+      history.back();
+    });
+  });
+</script>
