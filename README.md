@@ -10,6 +10,8 @@ Lobby Archive is a fan-made website that stores a collection of all [Blue Archiv
 
 Select or search for your favorite student and view their memorial lobby as-in within the browser as a video or download it.
 
+*Last Updated: **10/1/2024***
+
 ## Table of Contents
 
 - [Built With](#built-with)
@@ -66,15 +68,10 @@ All assets, game content, and materials are trademarks and copyrights of Nexon G
 
 Besides the resources used to create the data for this website, here are other resources used for this website's development:
 
-- [Astro Documentation](https://docs.astro.build/en/getting-started/)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs/installation)
 - [images-to-webp Python script, written by me](https://github.com/hny-codes/images-to-webp)
-- [Sanity Documentation](https://www.sanity.io/docs)
-- [MDN Documentation](https://developer.mozilla.org/en-US/)
 - [MDN Video State](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/readyState)
-- [GROQ Cheat-sheet](https://www.sanity.io/docs/query-cheat-sheet)
-- [Astro SEO integration](https://github.com/jonasmerlin/astro-seo#readme)
 - [Icones.js](https://icones.js.org/)
+- [Blue Archive Logo Generator](https://github.com/nulla2011/Bluearchive-logo)
 
 <div align='center' style="margin-top:2rem;">
   <b style="font-size:2rem;">Thanks for viewing, Sensei!</b>
