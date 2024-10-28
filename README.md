@@ -10,7 +10,13 @@ Lobby Archive is a fan-made website that stores a collection of all [Blue Archiv
 
 Select or search for your favorite student and view their memorial lobby as-in within the browser as a video or download it.
 
-*Last Updated: **10/1/2024***
+---
+
+_Last Updated: **10/27/2024**_
+- Aomori Mine (Idol)
+- Utazumi Sakurako (Idol)
+- Iochi Mari (Idol)
+
 
 ## Table of Contents
 
