@@ -12,10 +12,9 @@ Select or search for your favorite student and view their memorial lobby as-in w
 
 ---
 
-_Last Updated: **10/27/2024**_
-- Aomori Mine (Idol)
-- Utazumi Sakurako (Idol)
-- Iochi Mari (Idol)
+_Last Updated: **12/01/2024**_
+- Motomiya Chiaki
+- Kyogoku Satsuki
 
 
 ## Table of Contents
