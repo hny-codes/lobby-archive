@@ -16,6 +16,9 @@ _Last Updated: **02/15/2025**_
 - Kazekura Moe (Swimsuit)
 - Ichinose Asuna (School Uniform)
 - Kakudate Karin (School Uniform)
+- Mikamo Neru (School Uniform)
+- Tsukatsuki Rio
+- Yurizono Seia
 
 
 ## Table of Contents
