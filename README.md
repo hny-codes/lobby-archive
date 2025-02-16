@@ -12,9 +12,10 @@ Select or search for your favorite student and view their memorial lobby as-in w
 
 ---
 
-_Last Updated: **01/11/2024**_
-- Ushio Noa (Pajama)
-- Hayase Yuuka (Pajama)
+_Last Updated: **02/15/2025**_
+- Kazekura Moe (Swimsuit)
+- Ichinose Asuna (School Uniform)
+- Kakudate Karin (School Uniform)
 
 
 ## Table of Contents
