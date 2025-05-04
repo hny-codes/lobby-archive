@@ -12,13 +12,17 @@ Select or search for your favorite student and view their memorial lobby as-in w
 
 ---
 
-_Last Updated: **02/15/2025**_
-- Kazekura Moe (Swimsuit)
-- Ichinose Asuna (School Uniform)
-- Kakudate Karin (School Uniform)
-- Mikamo Neru (School Uniform)
-- Tsukatsuki Rio
-- Yurizono Seia
+_Last Updated: **05/04/2025**_
+- Tachibana Nozomi
+- Tachibana Hikari
+- Utsumi Aoba
+- Jomae Saori (Dress)
+- Nomasa Rei
+- Otohana Sumire (Part Timer)
+- Shishido Izumi (New Year)
+- Himuro Sena (Casual)
+- Ushimaki Juri (Part Timer)
+- Konuri Maki (Camp)
 
 
 ## Table of Contents
